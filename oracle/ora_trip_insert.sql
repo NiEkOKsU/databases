@@ -53,21 +53,18 @@ insert into person(firstname, lastname)
 values ('Stanisław', 'Wokulski');
 
 -- reservation
--- trip 1
 insert into reservation(trip_id, person_id, status)
 values (1, 1, 'P');
 
 insert into reservation(trip_id, person_id, status)
 values (1, 2, 'N');
 
--- trip 2
 insert into reservation(trip_id, person_id, status)
 values (2, 1, 'P');
 
 insert into reservation(trip_id, person_id, status)
 values (2, 4, 'C');
 
--- trip 3
 insert into reservation(trip_id, person_id, status)
 values (2, 4, 'P');
 
@@ -77,9 +74,8 @@ values (3, 7, 'N');
 insert into reservation(trip_id, person_id, status)
 values (3, 8, 'N');
 
--- trip 4
 insert into reservation(trip_id, person_id, status)
-values (4, 2, 'P');
+values (3, 2, 'P');
 
 insert into reservation(trip_id, person_id, status)
 values (4, 8, 'C');

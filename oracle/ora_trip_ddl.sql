@@ -12,7 +12,7 @@ create table person
   constraint person_pk primary key ( person_id ) enable
 );
 
-create table countries
+create table country
 (
     country varchar(50),
     constraint country_pk primary key ( country ) enable
