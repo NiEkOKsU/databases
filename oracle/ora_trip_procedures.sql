@@ -24,7 +24,7 @@ begin
     end if;
     select NO_AVILABLE_PLACES into av_places from TRIPS T join RESERVATION R on R.TRIP_ID = T.TRIP_ID
         where RESERVATION_ID = p_reservation_id;
-    if p_status = 'C' and av_places = 0 then
+    if p_status in ('N', 'P') and av_places = 0 then
         raise_application_error(-20002, 'not enought places');
     end if;
     update reservation

@@ -15,5 +15,5 @@ CREATE OR REPLACE VIEW Trips AS
 CREATE OR REPLACE VIEW AvailableTrips AS
     SELECT TRIP_ID, country, trip_name, trip_date, no_places, no_avilable_places
     FROM Trips
-    where no_avilable_places > 0
+    where no_avilable_places > 0 and current_date < trip_date
 ;
