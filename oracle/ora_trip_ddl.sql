@@ -71,3 +71,6 @@ add constraint log_chk1 check
 alter table log
 add constraint log_fk1 foreign key
 ( reservation_id ) references reservation ( reservation_id ) enable;
+
+alter table trip add (no_available_places int default 0)
+

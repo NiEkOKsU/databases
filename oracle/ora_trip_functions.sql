@@ -55,10 +55,34 @@ begin
     if valid = 0 then
         raise_application_error(-20001, 'country not found');
     end if;
-    select available_trips(t.country, trip_name, trip_date, max_no_places) bulk collect
+    select available_trips(t.country, trip_name, trip_date, NO_AVILABLE_PLACES) bulk collect
     into result
-    from TRIP t
-    where t.country = FAvailableTrips.country
+    from TRIPS t
+    where t.country = FAvailableTrips.country and NO_AVILABLE_PLACES > 0
       and trip_date between FAvailableTrips.date_from and FAvailableTrips.date_to;
     return result;
 end;
+
+create or replace function FAvailableTrips4(country varchar, date_from date, date_to date)
+    return available_trips_table
+as
+    result available_trips_table;
+    valid int;
+begin
+    if FAvailableTrips4.date_to < FAvailableTrips4.date_from then
+        raise_application_error(-20001, 'date_to is earlier from date_from');
+    end if;
+    select count(*) into valid
+        from COUNTRIES c
+        where c.COUNTRY = FAvailableTrips4.country;
+    if valid = 0 then
+        raise_application_error(-20001, 'country not found');
+    end if;
+    select available_trips(t.country, trip_name, trip_date, NO_AVAILABLE_PLACES) bulk collect
+    into result
+    from TRIP t
+    where t.country = FAvailableTrips4.country and NO_AVAILABLE_PLACES > 0
+      and trip_date between FAvailableTrips4.date_from and FAvailableTrips4.date_to;
+    return result;
+end;
+
