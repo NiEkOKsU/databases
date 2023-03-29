@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "zadanie-Program",
+      "appliesTo": "BartłomiejKozeraEFLab/BartłomiejKozeraEFLab/Program.cs",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "zadanie-ProductsDatabase",
+      "appliesTo": "BartłomiejKozeraEFLab/BartłomiejKozeraEFLab/ProductsDatabase",
+      "type": "launch"
+    }
+  ]
+}
