@@ -17,3 +17,15 @@ CREATE OR REPLACE VIEW AvailableTrips AS
     FROM Trips
     where no_avilable_places > 0 and current_date < trip_date
 ;
+
+CREATE OR REPLACE VIEW Trips4 AS
+    SELECT T.TRIP_ID, T.country, T.trip_name, T.trip_date, MAX_NO_PLACES no_places, NO_AVAILABLE_PLACES
+    from TRIP T
+;
+
+CREATE OR REPLACE VIEW AvailableTrips4 AS
+    SELECT TRIP_ID, country, trip_name, trip_date, no_places, NO_AVAILABLE_PLACES
+    FROM Trips4
+    where NO_AVAILABLE_PLACES > 0 and current_date < trip_date
+;
+
