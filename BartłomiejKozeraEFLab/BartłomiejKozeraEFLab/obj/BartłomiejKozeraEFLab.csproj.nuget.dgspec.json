@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\proks\\OneDrive\\Pulpit\\databases\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab.csproj": {}
+    "D:\\databases\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab.csproj": {}
   },
   "projects": {
-    "C:\\Users\\proks\\OneDrive\\Pulpit\\databases\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab.csproj": {
+    "D:\\databases\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\proks\\OneDrive\\Pulpit\\databases\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab.csproj",
+        "projectUniqueName": "D:\\databases\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab.csproj",
         "projectName": "BartłomiejKozeraEFLab",
-        "projectPath": "C:\\Users\\proks\\OneDrive\\Pulpit\\databases\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab.csproj",
-        "packagesPath": "C:\\Users\\proks\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\proks\\OneDrive\\Pulpit\\databases\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\obj\\",
+        "projectPath": "D:\\databases\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab.csproj",
+        "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
+        "outputPath": "D:\\databases\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\proks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

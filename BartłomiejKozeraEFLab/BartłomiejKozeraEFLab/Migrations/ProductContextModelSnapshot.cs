@@ -26,12 +26,56 @@ namespace BartłomiejKozeraEFLab.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("SupplierID")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("UnitsOnStock")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ProductID");
 
+                    b.HasIndex("SupplierID");
+
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("BartlomiejKozeraProducts.Supplier", b =>
+                {
+                    b.Property<int>("SupplierID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CompanyName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("SupplierID");
+
+                    b.ToTable("Supplier");
+                });
+
+            modelBuilder.Entity("BartlomiejKozeraProducts.Product", b =>
+                {
+                    b.HasOne("BartlomiejKozeraProducts.Supplier", "Supplier")
+                        .WithMany("Products")
+                        .HasForeignKey("SupplierID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("BartlomiejKozeraProducts.Supplier", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

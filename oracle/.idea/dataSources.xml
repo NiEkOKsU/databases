@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@dbmanage.lab.ii.agh.edu.pl" uuid="5c5037c3-eaac-4062-947f-74e3f56ab3d9">
-      <driver-ref>oracle.19</driver-ref>
+    <data-source source="LOCAL" name="ProductsDatabase" uuid="55f316e1-c0f3-4210-9d28-be5d43e25924">
+      <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
-      <auto-commit>false</auto-commit>
-      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
-      <jdbc-url>jdbc:oracle:thin:@dbmanage.lab.ii.agh.edu.pl:1521:DBMANAGE</jdbc-url>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\databases\BartłomiejKozeraEFLab\BartłomiejKozeraEFLab\bin\Debug\net6.0\ProductsDatabase</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.40.1/org/xerial/sqlite-jdbc/3.40.1.0/sqlite-jdbc-3.40.1.0.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="SuppliersDatabase" uuid="6a15e67a-6e37-40cb-9960-adc4125dc22a">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\databases\BartłomiejKozeraEFLab\BartłomiejKozeraEFLab\bin\Debug\net6.0\SuppliersDatabase</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.40.1/org/xerial/sqlite-jdbc/3.40.1.0/sqlite-jdbc-3.40.1.0.jar</url>
+        </library>
+      </libraries>
     </data-source>
   </component>
 </project>
