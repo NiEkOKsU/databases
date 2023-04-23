@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\BartłomiejKozeraEFLab",
-    "\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab"
+    "\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab",
+    "\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\bin\\Debug",
+    "\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\bin\\Debug\\net6.0"
   ],
-  "SelectedNode": "\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab.sln",
+  "SelectedNode": "\\BartłomiejKozeraEFLab\\BartłomiejKozeraEFLab\\Zadanie5.cs",
   "PreviewInSolutionExplorer": false
 }

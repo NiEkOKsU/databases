@@ -6,40 +6,31 @@ namespace BartlomiejKozeraProducts
     {
         static void Main(String[] args)
         {
-            Console.WriteLine("Podaj nazwę dostawcy: ");
-            string CompanyName = Console.ReadLine();
-            Console.WriteLine("Podaj adres dostawcy: ");
-            string Street = Console.ReadLine();
-            Console.WriteLine("Podaj miasto dostawcy: ");
-            string City = Console.ReadLine();
-            Console.WriteLine("Lista dostawcow: ");
-            SupplierContext supplierContext = new SupplierContext();
-            Supplier supplier = new Supplier { CompanyName = CompanyName, Street = Street, City = City };
-            supplierContext.Suppliers.Add(supplier);
-            supplierContext.SaveChanges();
-
-            var query2 = from supp in supplierContext.Suppliers
-                         select supp.CompanyName;
-            foreach (var cName in query2)
+            CompanyContext companyContext = new CompanyContext();
+            /*
+            Customer company = new Customer{CompanyName = "Gouda Gruchała", Street = "Wielka wieś 11", City= "Wielka wieś", ZipCode="30364", Discount=0.10};
+            companyContext.Customers.Add(company);
+            companyContext.SaveChanges();
+            IQueryable<Company> linqQuery2 = from b in companyContext.Companies select b;
+            List<Company> companiesDetails = linqQuery2.ToList();
+            foreach (Company name in companiesDetails)
             {
-                Console.WriteLine(cName);
+                System.Console.WriteLine(name.CompanyName);
             }
+            var linqQuery = from b in companyContext.Suppliers select b.CompanyName;
 
-            Console.WriteLine("Podaj nazwę produktu: ");
-            string ProductName = Console.ReadLine();
-
-            Console.WriteLine("Lista produktów: ");
-            ProductContext productContext = new ProductContext();
-            Product product = new Product { ProductName = ProductName };
-            productContext.Products.Add(product);
-            productContext.SaveChanges();
-
-            var query = from prod in productContext.Products
-                       select prod.ProductName;
-            foreach (var pName in query)
+            foreach(string name in linqQuery)
             {
-                Console.WriteLine(pName);
+                System.Console.WriteLine(name);
             }
+            IQueryable<Customer> query = from b in companyContext.Companies.OfType<Customer>()
+                                            select b;
+            foreach (Customer name in query)
+            {
+                System.Console.WriteLine(name.CompanyName);
+            }
+            System.Console.ReadLine();
+            */
         }
 
     }

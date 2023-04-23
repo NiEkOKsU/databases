@@ -13,17 +13,26 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="SuppliersDatabase" uuid="6a15e67a-6e37-40cb-9960-adc4125dc22a">
+    <data-source source="LOCAL" name="InvoicesDatabase" uuid="956ff268-bbca-4c6d-a137-0c9ec044df8d">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\databases\BartłomiejKozeraEFLab\BartłomiejKozeraEFLab\bin\Debug\net6.0\SuppliersDatabase</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/../BartłomiejKozeraEFLab/BartłomiejKozeraEFLab/bin/Debug/net6.0/InvoicesDatabase</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
-      <libraries>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.40.1/org/xerial/sqlite-jdbc/3.40.1.0/sqlite-jdbc-3.40.1.0.jar</url>
-        </library>
-      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="ProductInvoicesDatabase" uuid="86d5c191-f249-4754-991c-ec11a721f504">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/../BartłomiejKozeraEFLab/BartłomiejKozeraEFLab/bin/Debug/net6.0/ProductInvoicesDatabase</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="CompaniesDatabase" uuid="6ac79ba5-362c-4185-9dd4-76fbe9f445c5">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/../BartłomiejKozeraEFLab/BartłomiejKozeraEFLab/bin/Debug/net6.0/CompaniesDatabase</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
 </project>
