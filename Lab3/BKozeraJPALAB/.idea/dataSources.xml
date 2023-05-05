@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="BartlomiejKozeraJPA@127.0.0.1" uuid="8af8cd35-f0f4-4d07-a519-bc183b35a559">
+      <driver-ref>derby.remote</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby://127.0.0.1:1527/BartlomiejKozeraJPA;create=true</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
