@@ -1,15 +1,13 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace BartlomiejKozeraProducts
 {
-    public class Supplier
+    [Table("Supplier")]
+    public class Supplier : Company
     {
-        public int SupplierID { get; set; }
-        public string CompanyName { get; set; }
-        public string Street { get; set; }
-        public string City { get; set; }
-
-
-        public ICollection<Product> Products { get; set; }
+        public int BankAccountNumber { get; set; }
     }
 }
 

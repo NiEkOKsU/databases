@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace BartłomiejKozeraEFLab.Migrations
+namespace BartłomiejKozeraEFLab.Migrations.Product
 {
     /// <inheritdoc />
     public partial class InitProductDatabase : Migration
@@ -10,6 +10,20 @@ namespace BartłomiejKozeraEFLab.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Invoice",
+                columns: table => new
+                {
+                    InvoiceID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    invoiceNumber = table.Column<int>(type: "INTEGER", nullable: false),
+                    quantity = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Invoice", x => x.InvoiceID);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Supplier",
                 columns: table => new
@@ -46,6 +60,35 @@ namespace BartłomiejKozeraEFLab.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "InvoiceProduct",
+                columns: table => new
+                {
+                    InvoicesInvoiceID = table.Column<int>(type: "INTEGER", nullable: false),
+                    ProductsProductID = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_InvoiceProduct", x => new { x.InvoicesInvoiceID, x.ProductsProductID });
+                    table.ForeignKey(
+                        name: "FK_InvoiceProduct_Invoice_InvoicesInvoiceID",
+                        column: x => x.InvoicesInvoiceID,
+                        principalTable: "Invoice",
+                        principalColumn: "InvoiceID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_InvoiceProduct_Products_ProductsProductID",
+                        column: x => x.ProductsProductID,
+                        principalTable: "Products",
+                        principalColumn: "ProductID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_InvoiceProduct_ProductsProductID",
+                table: "InvoiceProduct",
+                column: "ProductsProductID");
+
             migrationBuilder.CreateIndex(
                 name: "IX_Products_SupplierID",
                 table: "Products",
@@ -55,6 +98,12 @@ namespace BartłomiejKozeraEFLab.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "InvoiceProduct");
+
+            migrationBuilder.DropTable(
+                name: "Invoice");
+
             migrationBuilder.DropTable(
                 name: "Products");
 

@@ -127,5 +127,3 @@ D:\databases\BartłomiejKozeraEFLab\BartłomiejKozeraEFLab\obj\Debug\net6.0\refi
 D:\databases\BartłomiejKozeraEFLab\BartłomiejKozeraEFLab\obj\Debug\net6.0\BartłomiejKozeraEFLab.pdb
 D:\databases\BartłomiejKozeraEFLab\BartłomiejKozeraEFLab\obj\Debug\net6.0\BartłomiejKozeraEFLab.genruntimeconfig.cache
 D:\databases\BartłomiejKozeraEFLab\BartłomiejKozeraEFLab\obj\Debug\net6.0\ref\BartłomiejKozeraEFLab.dll
-D:\databases\BartłomiejKozeraEFLab\BartłomiejKozeraEFLab\bin\Debug\net6.0\SuppliersDatabase
-D:\databases\BartłomiejKozeraEFLab\BartłomiejKozeraEFLab\bin\Debug\net6.0\ProductsDatabase

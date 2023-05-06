@@ -7,17 +7,34 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BartłomiejKozeraEFLab.Migrations
+namespace BartłomiejKozeraEFLab.Migrations.Invoice
 {
-    [DbContext(typeof(ProductContext))]
-    [Migration("20230404204823_InitProductDatabase")]
-    partial class InitProductDatabase
+    [DbContext(typeof(InvoiceContext))]
+    [Migration("20230413182058_InitProductInvoices")]
+    partial class InitProductInvoices
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
+
+            modelBuilder.Entity("BartlomiejKozeraProducts.Invoice", b =>
+                {
+                    b.Property<int>("InvoiceID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("invoiceNumber")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("InvoiceID");
+
+                    b.ToTable("Invoices");
+                });
 
             modelBuilder.Entity("BartlomiejKozeraProducts.Product", b =>
                 {
@@ -39,7 +56,7 @@ namespace BartłomiejKozeraEFLab.Migrations
 
                     b.HasIndex("SupplierID");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("BartlomiejKozeraProducts.Supplier", b =>
@@ -65,6 +82,21 @@ namespace BartłomiejKozeraEFLab.Migrations
                     b.ToTable("Supplier");
                 });
 
+            modelBuilder.Entity("InvoiceProduct", b =>
+                {
+                    b.Property<int>("InvoicesInvoiceID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ProductsProductID")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("InvoicesInvoiceID", "ProductsProductID");
+
+                    b.HasIndex("ProductsProductID");
+
+                    b.ToTable("InvoiceProduct");
+                });
+
             modelBuilder.Entity("BartlomiejKozeraProducts.Product", b =>
                 {
                     b.HasOne("BartlomiejKozeraProducts.Supplier", "Supplier")
@@ -74,6 +106,21 @@ namespace BartłomiejKozeraEFLab.Migrations
                         .IsRequired();
 
                     b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("InvoiceProduct", b =>
+                {
+                    b.HasOne("BartlomiejKozeraProducts.Invoice", null)
+                        .WithMany()
+                        .HasForeignKey("InvoicesInvoiceID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BartlomiejKozeraProducts.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductsProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BartlomiejKozeraProducts.Supplier", b =>
